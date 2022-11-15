@@ -52,6 +52,9 @@ namespace MyFirstguiApplication {
 	private: System::Windows::Forms::Label^ Answer;
 
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::TextBox^ textBox1;
+
+
 	private: System::ComponentModel::IContainer^ components;
 
 	private:
@@ -83,6 +86,7 @@ namespace MyFirstguiApplication {
 			this->final_velocity = (gcnew System::Windows::Forms::TextBox());
 			this->Answer = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -199,24 +203,35 @@ namespace MyFirstguiApplication {
 			this->Answer->BackColor = System::Drawing::Color::Transparent;
 			this->Answer->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Answer->Location = System::Drawing::Point(434, 244);
+			this->Answer->Location = System::Drawing::Point(417, 263);
 			this->Answer->Name = L"Answer";
-			this->Answer->Size = System::Drawing::Size(85, 29);
+			this->Answer->Size = System::Drawing::Size(0, 29);
 			this->Answer->TabIndex = 12;
-			this->Answer->Text = L"label7";
 			// 
 			// button1
 			// 
 			this->button1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.BackgroundImage")));
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(422, 119);
+			this->button1->Location = System::Drawing::Point(451, 72);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(170, 64);
 			this->button1->TabIndex = 13;
 			this->button1->Text = L"Calculate";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &KenamaticsForm::button1_Click);
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(422, 148);
+			this->textBox1->Multiline = true;
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->ReadOnly = true;
+			this->textBox1->Size = System::Drawing::Size(215, 51);
+			this->textBox1->TabIndex = 14;
+			this->textBox1->Text = L"type missing for what you dont have and dont need and unknown for what you have a"
+				L"nd need";
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &KenamaticsForm::textBox1_TextChanged);
 			// 
 			// KenamaticsForm
 			// 
@@ -225,6 +240,7 @@ namespace MyFirstguiApplication {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(660, 314);
+			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->Answer);
 			this->Controls->Add(this->final_velocity);
@@ -491,5 +507,10 @@ namespace MyFirstguiApplication {
 
 private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+
 };
 }
