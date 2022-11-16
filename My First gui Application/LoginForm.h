@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include "ForgotPass.h"
+#include "ApplicationsForm.h"
 #include <msclr/marshal.h>
 #include <msclr\marshal_cppstd.h> 
 
@@ -252,7 +253,10 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	input.close();
 
 	if (counts == 1) {
-		label4->Text = "login succeful";
+		this->Hide();
+		ApplicationsForm^ obj1 = gcnew ApplicationsForm(this,userid);
+		obj1->ShowDialog();
+		
 	}
 	else {
 		label4->Text = "login Failed";

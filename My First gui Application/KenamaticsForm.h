@@ -225,6 +225,7 @@ namespace MyFirstguiApplication {
 			this->button1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.BackgroundImage")));
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::Color::Yellow;
 			this->button1->Location = System::Drawing::Point(478, 72);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(170, 64);
@@ -248,11 +249,12 @@ namespace MyFirstguiApplication {
 			// button2
 			// 
 			this->button2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.BackgroundImage")));
-			this->button2->Location = System::Drawing::Point(533, 208);
+			this->button2->ForeColor = System::Drawing::Color::Yellow;
+			this->button2->Location = System::Drawing::Point(506, 217);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(115, 40);
 			this->button2->TabIndex = 15;
-			this->button2->Text = L"Main Menu";
+			this->button2->Text = L"Application Menu";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &KenamaticsForm::button2_Click);
 			// 
