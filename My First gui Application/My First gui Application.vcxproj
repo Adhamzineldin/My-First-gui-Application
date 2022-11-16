@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="ApplicationsForm.cpp" />
     <ClCompile Include="ForgotPass.cpp" />
+    <ClCompile Include="GPAForm.cpp" />
     <ClCompile Include="KenamaticsForm.cpp" />
     <ClCompile Include="LoginForm.cpp" />
     <ClCompile Include="MainForm.cpp" />
@@ -135,6 +136,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ForgotPass.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="GPAForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="KenamaticsForm.h">
@@ -157,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ForgotPass.resx">
       <DependentUpon>ForgotPass.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GPAForm.resx">
+      <DependentUpon>GPAForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KenamaticsForm.resx">
       <DependentUpon>KenamaticsForm.h</DependentUpon>

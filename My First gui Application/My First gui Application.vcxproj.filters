@@ -33,6 +33,9 @@
     <ClCompile Include="ApplicationsForm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GPAForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KenamaticsForm.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GPAForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
