@@ -53,6 +53,7 @@ namespace MyFirstguiApplication {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button4;
 	protected:
 
 	private:
@@ -74,6 +75,7 @@ namespace MyFirstguiApplication {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -145,6 +147,20 @@ namespace MyFirstguiApplication {
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &ApplicationsForm::button3_Click);
 			// 
+			// button4
+			// 
+			this->button4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button4.BackgroundImage")));
+			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button4->ForeColor = System::Drawing::Color::Yellow;
+			this->button4->Location = System::Drawing::Point(246, 149);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(106, 42);
+			this->button4->TabIndex = 5;
+			this->button4->Text = L"Pong Game";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &ApplicationsForm::button4_Click);
+			// 
 			// ApplicationsForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -152,6 +168,7 @@ namespace MyFirstguiApplication {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(660, 314);
+			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label2);
@@ -186,6 +203,14 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	this->Hide();
 	GPAForm^ obj1 = gcnew GPAForm(this);
 	obj1->ShowDialog();
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+
+
+	system("ponggame.py");
+
+
+
 }
 };
 }

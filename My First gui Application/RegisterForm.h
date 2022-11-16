@@ -241,6 +241,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		std::string rpass = msclr::interop::marshal_as<std::string>(rpassword);
 		std::ofstream f1("records.txt", std::ios::app);
 		f1 << rid << ' ' << rpass << std::endl;
+		this->label4->ForeColor = System::Drawing::Color::Lime;
 		label4->Text = "Registration Succesful";
 
 
