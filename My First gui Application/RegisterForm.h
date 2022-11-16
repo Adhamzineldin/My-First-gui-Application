@@ -164,7 +164,7 @@ namespace MyFirstguiApplication {
 			this->label4->BackColor = System::Drawing::Color::Transparent;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->ForeColor = System::Drawing::Color::Red;
+			this->label4->ForeColor = System::Drawing::Color::Lime;
 			this->label4->Location = System::Drawing::Point(205, 101);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(0, 24);

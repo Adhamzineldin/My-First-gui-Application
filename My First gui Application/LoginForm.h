@@ -172,11 +172,15 @@ namespace MyFirstguiApplication {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(280, 109);
+			this->label4->BackColor = System::Drawing::Color::Transparent;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->ForeColor = System::Drawing::Color::Red;
+			this->label4->Location = System::Drawing::Point(210, 113);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(35, 13);
+			this->label4->Size = System::Drawing::Size(0, 37);
 			this->label4->TabIndex = 8;
-			this->label4->Text = L"label4";
+			this->label4->Click += gcnew System::EventHandler(this, &LoginForm::label4_Click);
 			// 
 			// LoginForm
 			// 
@@ -245,6 +249,8 @@ private: System::Void passwordss_TextChanged(System::Object^ sender, System::Eve
 private: System::Void username_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
