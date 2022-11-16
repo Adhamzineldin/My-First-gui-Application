@@ -257,6 +257,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		label4->Text = "";
 		username->Text="";
 		 passwordss->Text="";
+		 passwordss->Text = "";
 		this->Hide();
 		ApplicationsForm^ obj1 = gcnew ApplicationsForm(this,userid);
 		obj1->ShowDialog();

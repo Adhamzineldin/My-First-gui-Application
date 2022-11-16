@@ -246,6 +246,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 
 		rusername->Text = "";
 		rpasswordss->Text = "";
+		Rpassword->Text = "";
 	}
 	else {
 		this->label4->ForeColor = System::Drawing::Color::Red;
