@@ -54,6 +54,9 @@ namespace MyFirstguiApplication {
 
 	private: System::Windows::Forms::TextBox^ rusername;
 	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::TextBox^ Rpassword;
+
 
 	protected:
 
@@ -79,6 +82,8 @@ namespace MyFirstguiApplication {
 			this->rpasswordss = (gcnew System::Windows::Forms::TextBox());
 			this->rusername = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->Rpassword = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -170,6 +175,26 @@ namespace MyFirstguiApplication {
 			this->label4->Size = System::Drawing::Size(0, 24);
 			this->label4->TabIndex = 14;
 			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->BackColor = System::Drawing::Color::Transparent;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label5->ForeColor = System::Drawing::Color::LightGray;
+			this->label5->Location = System::Drawing::Point(38, 118);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(120, 48);
+			this->label5->TabIndex = 16;
+			this->label5->Text = L"Registration\r\n Password";
+			// 
+			// Rpassword
+			// 
+			this->Rpassword->Location = System::Drawing::Point(202, 134);
+			this->Rpassword->Name = L"Rpassword";
+			this->Rpassword->Size = System::Drawing::Size(217, 20);
+			this->Rpassword->TabIndex = 15;
+			// 
 			// RegisterForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -177,6 +202,8 @@ namespace MyFirstguiApplication {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(660, 314);
+			this->Controls->Add(this->label5);
+			this->Controls->Add(this->Rpassword);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
@@ -206,18 +233,24 @@ namespace MyFirstguiApplication {
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ ruserid = rusername->Text;
 		String^ rpassword= rpasswordss->Text;
+		String^ vertify = Rpassword->Text;
 	
-	
-	
-			std::string rid= msclr::interop::marshal_as<std::string>(ruserid);
-			std::string rpass = msclr::interop::marshal_as<std::string>(rpassword);
-			std::ofstream f1("records.txt", std::ios::app);
-			f1 << rid << ' ' << rpass << std::endl;
-			label4->Text = "Registration Succesful";
-		
-		
-			rusername->Text = "";
-			rpasswordss->Text = "";
+	if(vertify == "Register_2006")
+	{
+		std::string rid = msclr::interop::marshal_as<std::string>(ruserid);
+		std::string rpass = msclr::interop::marshal_as<std::string>(rpassword);
+		std::ofstream f1("records.txt", std::ios::app);
+		f1 << rid << ' ' << rpass << std::endl;
+		label4->Text = "Registration Succesful";
+
+
+		rusername->Text = "";
+		rpasswordss->Text = "";
+	}
+	else {
+		this->label4->ForeColor = System::Drawing::Color::Red;
+		label4->Text = "Wrong registration password";
+	}
 	
 	
 	
