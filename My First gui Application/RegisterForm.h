@@ -56,6 +56,7 @@ namespace MyFirstguiApplication {
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::TextBox^ Rpassword;
+	private: System::Windows::Forms::CheckBox^ checkBox1;
 
 
 	protected:
@@ -84,6 +85,7 @@ namespace MyFirstguiApplication {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->Rpassword = (gcnew System::Windows::Forms::TextBox());
+			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -155,6 +157,7 @@ namespace MyFirstguiApplication {
 			this->rpasswordss->Name = L"rpasswordss";
 			this->rpasswordss->Size = System::Drawing::Size(217, 20);
 			this->rpasswordss->TabIndex = 9;
+			this->rpasswordss->UseSystemPasswordChar = true;
 			// 
 			// rusername
 			// 
@@ -194,6 +197,19 @@ namespace MyFirstguiApplication {
 			this->Rpassword->Name = L"Rpassword";
 			this->Rpassword->Size = System::Drawing::Size(217, 20);
 			this->Rpassword->TabIndex = 15;
+			this->Rpassword->UseSystemPasswordChar = true;
+			// 
+			// checkBox1
+			// 
+			this->checkBox1->AutoSize = true;
+			this->checkBox1->BackColor = System::Drawing::Color::Transparent;
+			this->checkBox1->Location = System::Drawing::Point(425, 221);
+			this->checkBox1->Name = L"checkBox1";
+			this->checkBox1->Size = System::Drawing::Size(99, 17);
+			this->checkBox1->TabIndex = 17;
+			this->checkBox1->Text = L"show password";
+			this->checkBox1->UseVisualStyleBackColor = false;
+			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &RegisterForm::checkBox1_CheckedChanged);
 			// 
 			// RegisterForm
 			// 
@@ -202,6 +218,7 @@ namespace MyFirstguiApplication {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(660, 314);
+			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->Rpassword);
 			this->Controls->Add(this->label4);
@@ -258,6 +275,16 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	
 }
 private: System::Void RegisterForm_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if(checkBox1->Checked)
+	{
+		rpasswordss->UseSystemPasswordChar = false;
+	}
+	else {
+		rpasswordss->UseSystemPasswordChar = true;
+	}
+
 }
 };
 }

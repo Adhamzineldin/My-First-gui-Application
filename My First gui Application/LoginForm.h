@@ -63,6 +63,7 @@ namespace MyFirstguiApplication {
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::CheckBox^ checkBox1;
 	protected:
 
 	private:
@@ -88,6 +89,7 @@ namespace MyFirstguiApplication {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -117,6 +119,7 @@ namespace MyFirstguiApplication {
 			this->passwordss->Name = L"passwordss";
 			this->passwordss->Size = System::Drawing::Size(217, 20);
 			this->passwordss->TabIndex = 3;
+			this->passwordss->UseSystemPasswordChar = true;
 			this->passwordss->TextChanged += gcnew System::EventHandler(this, &LoginForm::passwordss_TextChanged);
 			// 
 			// label2
@@ -191,13 +194,25 @@ namespace MyFirstguiApplication {
 				static_cast<System::Byte>(0)));
 			this->button3->ForeColor = System::Drawing::Color::Yellow;
 			this->button3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.Image")));
-			this->button3->Location = System::Drawing::Point(471, 217);
+			this->button3->Location = System::Drawing::Point(478, 256);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(170, 53);
 			this->button3->TabIndex = 9;
 			this->button3->Text = L"Forgot Password";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &LoginForm::button3_Click);
+			// 
+			// checkBox1
+			// 
+			this->checkBox1->AutoSize = true;
+			this->checkBox1->BackColor = System::Drawing::Color::Transparent;
+			this->checkBox1->Location = System::Drawing::Point(445, 220);
+			this->checkBox1->Name = L"checkBox1";
+			this->checkBox1->Size = System::Drawing::Size(99, 17);
+			this->checkBox1->TabIndex = 18;
+			this->checkBox1->Text = L"show password";
+			this->checkBox1->UseVisualStyleBackColor = false;
+			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::checkBox1_CheckedChanged);
 			// 
 			// LoginForm
 			// 
@@ -206,6 +221,7 @@ namespace MyFirstguiApplication {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(660, 314);
+			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->button2);
@@ -283,6 +299,16 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	ForgotPass^ obj1 = gcnew ForgotPass(this);
 	obj1->ShowDialog();
 
+}
+private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	if (checkBox1->Checked)
+	{
+		passwordss->UseSystemPasswordChar = false;
+	}
+	else {
+		passwordss->UseSystemPasswordChar = true;
+	}
 }
 };
 }
