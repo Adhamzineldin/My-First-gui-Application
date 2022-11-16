@@ -215,6 +215,7 @@ namespace MyFirstguiApplication {
 			this->Controls->Add(this->passwordss);
 			this->Controls->Add(this->username);
 			this->Controls->Add(this->label1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"LoginForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"LoginForm";
@@ -253,6 +254,9 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	input.close();
 
 	if (counts == 1) {
+		label4->Text = "";
+		username->Text="";
+		 passwordss->Text="";
 		this->Hide();
 		ApplicationsForm^ obj1 = gcnew ApplicationsForm(this,userid);
 		obj1->ShowDialog();
@@ -260,7 +264,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	}
 	else {
 		label4->Text = "login Failed";
-		counts = 1;
+		
 	}
 }
 private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
