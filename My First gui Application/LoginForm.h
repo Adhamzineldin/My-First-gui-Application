@@ -1,7 +1,7 @@
 #pragma once
 #include <fstream>
 #include <iostream>
-
+#include "ForgotPass.h"
 #include <msclr/marshal.h>
 #include <msclr\marshal_cppstd.h> 
 
@@ -61,6 +61,7 @@ namespace MyFirstguiApplication {
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Button^ button3;
 	protected:
 
 	private:
@@ -85,6 +86,7 @@ namespace MyFirstguiApplication {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -148,7 +150,7 @@ namespace MyFirstguiApplication {
 			this->button1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.BackgroundImage")));
 			this->button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			this->button1->Location = System::Drawing::Point(500, 153);
+			this->button1->Location = System::Drawing::Point(509, 31);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(139, 66);
 			this->button1->TabIndex = 6;
@@ -161,7 +163,7 @@ namespace MyFirstguiApplication {
 			this->button2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.BackgroundImage")));
 			this->button2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			this->button2->Location = System::Drawing::Point(255, 256);
+			this->button2->Location = System::Drawing::Point(256, 256);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(119, 46);
 			this->button2->TabIndex = 7;
@@ -182,6 +184,20 @@ namespace MyFirstguiApplication {
 			this->label4->TabIndex = 8;
 			this->label4->Click += gcnew System::EventHandler(this, &LoginForm::label4_Click);
 			// 
+			// button3
+			// 
+			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button3->ForeColor = System::Drawing::Color::Yellow;
+			this->button3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.Image")));
+			this->button3->Location = System::Drawing::Point(471, 217);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(170, 53);
+			this->button3->TabIndex = 9;
+			this->button3->Text = L"Forgot Password";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &LoginForm::button3_Click);
+			// 
 			// LoginForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -189,6 +205,7 @@ namespace MyFirstguiApplication {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(660, 314);
+			this->Controls->Add(this->button3);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
@@ -251,6 +268,12 @@ private: System::Void username_TextChanged(System::Object^ sender, System::Event
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	ForgotPass^ obj1 = gcnew ForgotPass(this);
+	obj1->ShowDialog();
+
 }
 };
 }

@@ -87,7 +87,7 @@ namespace MyFirstguiApplication {
 			this->label1->BackColor = System::Drawing::Color::Transparent;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 27.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(153, 35);
+			this->label1->Location = System::Drawing::Point(153, 40);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(321, 42);
 			this->label1->TabIndex = 2;
@@ -188,6 +188,7 @@ namespace MyFirstguiApplication {
 			this->Name = L"RegisterForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"RegisterForm";
+			this->Load += gcnew System::EventHandler(this, &RegisterForm::RegisterForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -219,6 +220,8 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	
 	
 	
+}
+private: System::Void RegisterForm_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

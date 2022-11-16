@@ -77,7 +77,7 @@ namespace MyFirstguiApplication {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::Red;
-			this->button1->Location = System::Drawing::Point(35, 248);
+			this->button1->Location = System::Drawing::Point(32, 247);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(248, 43);
 			this->button1->TabIndex = 1;
@@ -90,7 +90,7 @@ namespace MyFirstguiApplication {
 			this->button2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.BackgroundImage")));
 			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold));
 			this->button2->ForeColor = System::Drawing::Color::Red;
-			this->button2->Location = System::Drawing::Point(388, 248);
+			this->button2->Location = System::Drawing::Point(382, 247);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(248, 42);
 			this->button2->TabIndex = 2;
@@ -111,6 +111,7 @@ namespace MyFirstguiApplication {
 			this->Name = L"MainForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"MainForm";
+			this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -129,6 +130,8 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	RegisterForm^ obj1 = gcnew RegisterForm(this);
 	obj1->ShowDialog();
 
+}
+private: System::Void MainForm_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

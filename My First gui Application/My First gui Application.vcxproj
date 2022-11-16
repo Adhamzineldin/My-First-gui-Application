@@ -123,12 +123,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ForgotPass.cpp" />
     <ClCompile Include="KenamaticsForm.cpp" />
     <ClCompile Include="LoginForm.cpp" />
     <ClCompile Include="MainForm.cpp" />
     <ClCompile Include="RegisterForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ForgotPass.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="KenamaticsForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -143,6 +147,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ForgotPass.resx">
+      <DependentUpon>ForgotPass.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KenamaticsForm.resx">
       <DependentUpon>KenamaticsForm.h</DependentUpon>
     </EmbeddedResource>
