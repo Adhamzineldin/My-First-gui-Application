@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cmath>
 
+
 namespace MyFirstguiApplication {
 
 	using namespace System;
@@ -17,8 +18,17 @@ namespace MyFirstguiApplication {
 	public ref class KenamaticsForm : public System::Windows::Forms::Form
 	{
 	public:
+		Form^ obj;
 		KenamaticsForm(void)
 		{
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+		}
+		KenamaticsForm(Form ^obj1)
+		{
+			obj = obj1;
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
@@ -53,6 +63,7 @@ namespace MyFirstguiApplication {
 
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Button^ button2;
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -87,6 +98,7 @@ namespace MyFirstguiApplication {
 			this->Answer = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -213,7 +225,7 @@ namespace MyFirstguiApplication {
 			this->button1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.BackgroundImage")));
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(451, 72);
+			this->button1->Location = System::Drawing::Point(478, 72);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(170, 64);
 			this->button1->TabIndex = 13;
@@ -233,6 +245,17 @@ namespace MyFirstguiApplication {
 				L"nd need";
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &KenamaticsForm::textBox1_TextChanged);
 			// 
+			// button2
+			// 
+			this->button2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.BackgroundImage")));
+			this->button2->Location = System::Drawing::Point(533, 208);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(115, 40);
+			this->button2->TabIndex = 15;
+			this->button2->Text = L"Main Menu";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &KenamaticsForm::button2_Click);
+			// 
 			// KenamaticsForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -240,6 +263,7 @@ namespace MyFirstguiApplication {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(660, 314);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->Answer);
@@ -255,7 +279,9 @@ namespace MyFirstguiApplication {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Name = L"KenamaticsForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"KenamaticsForm";
+			this->Load += gcnew System::EventHandler(this, &KenamaticsForm::KenamaticsForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -316,6 +342,7 @@ namespace MyFirstguiApplication {
 		std::string unit(std::string unit) {
 			return unit;
 		}
+		
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 
@@ -499,7 +526,7 @@ namespace MyFirstguiApplication {
 
 		///
 	}
-
+	
 
 
 
@@ -512,5 +539,17 @@ private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+	this->Hide();
+	obj->Show();
+	
+
+
+
+	//main menu
+	}
+private: System::Void KenamaticsForm_Load(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
