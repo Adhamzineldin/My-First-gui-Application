@@ -1,4 +1,5 @@
-#include "KenamaticsForm.h"
+#include "MainForm.h"
+
 
 using namespace System;
 
@@ -6,7 +7,7 @@ using namespace System::Windows::Forms;
 
 [STAThread]
 
-void Kenamatics(array<String^>^ args)
+void main(array<String^>^ args)
 
 {
 
@@ -14,9 +15,8 @@ void Kenamatics(array<String^>^ args)
 
     Application::SetCompatibleTextRenderingDefault(false);
 
-   MyFirstguiApplication::KenamaticsForm form;
+    MyFirstguiApplication::MainForm form;
 
     Application::Run(% form);
 
 }
-
