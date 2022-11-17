@@ -235,6 +235,7 @@ namespace MyFirstguiApplication {
 			this->Name = L"LoginForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"LoginForm";
+			this->Load += gcnew System::EventHandler(this, &LoginForm::LoginForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -309,6 +310,8 @@ private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::E
 	else {
 		passwordss->UseSystemPasswordChar = true;
 	}
+}
+private: System::Void LoginForm_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

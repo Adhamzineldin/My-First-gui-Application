@@ -165,6 +165,7 @@ namespace MyFirstguiApplication {
 			this->Name = L"ForgotPass";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"ForgotPass";
+			this->Load += gcnew System::EventHandler(this, &ForgotPass::ForgotPass_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -207,6 +208,8 @@ private: System::Void button2_Click_1(System::Object^ sender, System::EventArgs^
 
 
 
+}
+private: System::Void ForgotPass_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
