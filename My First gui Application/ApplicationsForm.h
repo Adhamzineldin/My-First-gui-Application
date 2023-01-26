@@ -1,6 +1,7 @@
 #pragma once
 #include "KenamaticsForm.h"
 #include "GPAForm.h"
+#include "BlackJackForm.h"
 namespace MyFirstguiApplication {
 	
 	using namespace System;
@@ -17,6 +18,7 @@ namespace MyFirstguiApplication {
 	{
 	public:
 		Form^ obj;
+		
 		ApplicationsForm(void)
 		{
 			InitializeComponent();
@@ -54,6 +56,7 @@ namespace MyFirstguiApplication {
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ button5;
 	protected:
 
 	private:
@@ -76,6 +79,7 @@ namespace MyFirstguiApplication {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -139,7 +143,7 @@ namespace MyFirstguiApplication {
 			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button3->ForeColor = System::Drawing::Color::Yellow;
-			this->button3->Location = System::Drawing::Point(134, 149);
+			this->button3->Location = System::Drawing::Point(124, 149);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(106, 42);
 			this->button3->TabIndex = 4;
@@ -153,13 +157,27 @@ namespace MyFirstguiApplication {
 			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button4->ForeColor = System::Drawing::Color::Yellow;
-			this->button4->Location = System::Drawing::Point(246, 149);
+			this->button4->Location = System::Drawing::Point(236, 149);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(106, 42);
 			this->button4->TabIndex = 5;
 			this->button4->Text = L"Pong Game";
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Click += gcnew System::EventHandler(this, &ApplicationsForm::button4_Click);
+			// 
+			// button5
+			// 
+			this->button5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button5.BackgroundImage")));
+			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button5->ForeColor = System::Drawing::Color::Yellow;
+			this->button5->Location = System::Drawing::Point(348, 149);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(106, 42);
+			this->button5->TabIndex = 6;
+			this->button5->Text = L"Blackjack";
+			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &ApplicationsForm::button5_Click);
 			// 
 			// ApplicationsForm
 			// 
@@ -168,6 +186,7 @@ namespace MyFirstguiApplication {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(660, 314);
+			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
@@ -212,5 +231,11 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 
 
 }
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	BlackJackForm^ obj1 = gcnew BlackJackForm(this);
+	obj1->ShowDialog();
+
+	}
 };
 }

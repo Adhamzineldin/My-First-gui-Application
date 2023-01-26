@@ -125,6 +125,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ApplicationsForm.cpp" />
+    <ClCompile Include="BlackJackForm.cpp" />
     <ClCompile Include="ForgotPass.cpp" />
     <ClCompile Include="GPAForm.cpp" />
     <ClCompile Include="KenamaticsForm.cpp" />
@@ -134,6 +135,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ApplicationsForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="BlackJackForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ForgotPass.h">
@@ -159,6 +163,9 @@
   <ItemGroup>
     <EmbeddedResource Include="ApplicationsForm.resx">
       <DependentUpon>ApplicationsForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BlackJackForm.resx">
+      <DependentUpon>BlackJackForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ForgotPass.resx">
       <DependentUpon>ForgotPass.h</DependentUpon>

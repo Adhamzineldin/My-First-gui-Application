@@ -529,19 +529,12 @@ namespace MyFirstguiApplication {
 
 		///
 	}
-	
-
-
-
-	
-
 private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
-
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	
 	this->Hide();
